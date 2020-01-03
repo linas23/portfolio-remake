@@ -66,12 +66,6 @@ export default {
     },
     data(){
         return{
-            formdata:{
-                name:'',
-                email:''
-            },
-            emailValidation:'',
-            nameValidation:'',
             tabs:[
                 {
                     title:'About me',

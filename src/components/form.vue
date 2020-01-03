@@ -16,6 +16,7 @@
                         <div class="material-icons">email</div>
                         <input type="email" placeholder="enter your email" v-model="email">
                     </div>
+                    <p v-if="feedback" v-html="feedback"></p>
                     <div class="card-actions">
                         <button class="btn red" type="submit">
                             Send
@@ -28,16 +29,34 @@
 </template>
 <script>
 /* eslint-disable no-console */
+import {    db     } from '@/firebase/init';
 export default {
     data(){
         return{
-            email:'desemaru77@gmail.com',
-            name:'linas23'
+            email:null,
+            name:null,
+            feedback:null
         }
     },
     methods:{
         sendInfo(){
-            console.log('sending informations')
+            console.log('sending informations');
+            console.log(this.email,this.name);
+            if(!this.name){
+                this.feedback='please enter your name'
+            }
+            if(this.name&&this.email){
+                db.collection("emails").add({
+                    name:this.name,
+                    email:this.email,
+            }).then(()=>{
+                console.log('data submitted');
+                this.feedback=null;
+            }).catch(err=>{
+                this.feedback=null;
+                this.feedback=err;
+            })
+            }
     }
     }
 }
