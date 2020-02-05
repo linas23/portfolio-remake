@@ -64,6 +64,8 @@ export default {
 <style lang="scss">
     .form{
         margin: 100px 0px;
+        font-family: 'ZCOOL XiaoWei', serif;
+
         .card{
             width: 600px;
             margin: 0 auto;

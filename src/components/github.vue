@@ -1,10 +1,10 @@
 <template>
+        <!-- Mxy git -->
     <div>
-        <!-- My git -->
-        <div id="github-container">
+        <div class="container">
             <h2 class="center">Some of my projects in GitHub</h2>
             <div class="projects center">
-                <div class="card container" v-for="(project,index) in projects" :key="index">
+                <div class="card" v-for="(project,index) in projects" :key="index">
                     <img v-bind:src="project.img"  alt="">
                 <div class="relative">
                         <div class="title">{{project.title}}</div>
@@ -25,6 +25,10 @@ import calc from './images/projects/calculator.png';
 import findAnother from './images/projects/findanother.png';
 import rk from './images/projects/Rk.com.png';
 import wastingtime from './images/projects/wastingtime.png';
+import laughoutloud from './images/projects/laughoutloud.png'
+import bunchofapis from './images/projects/bunchofapis.png'
+import oldportfolio from './images/projects/oldportfolio.png'
+
 export default {
     data(){
         return{
@@ -59,6 +63,24 @@ export default {
                 description:'Not completed.',
                 github:'Sorry not available in Github yet.'
             },
+            {
+                img:laughoutloud,
+                title:'A joke for you',
+                description:'please smile',
+                github:'https://laughoutloud23.herokuapp.com/'
+            },
+            {
+                img:bunchofapis,
+                title:'API use',
+                description:'get news and play videos from youtube',
+                github: 'https://wordapp23.herokuapp.com/'
+            },
+            {
+                img:oldportfolio,
+                title:'My old portfolio',
+                description:'here is my old portfolio',
+                github: 'https://linas23.github.io/myportfolio23/' 
+            }
         ]
         }
     }
@@ -68,23 +90,44 @@ export default {
 @mixin easeOut {
     transition: all 0.7s ease;
 }
+.container{
+    h2{
+        margin: 0px;
+        padding: 30px;
+        color: white;
+        font-family: 'Uncial Antiqua', cursive;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: rgba(rgb(58, 43, 196),0.7)
+    }
+    padding: 10px;
+}
+.projects{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width:100%
+}
 
 .card{
-    width: 100%;
-    margin: 0 auto;
-    // text-align: center;
+    width: 45%;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px ;
     img{
         width:100%;
         opacity: 1;
         position: relative;
-        // margin: 0;
     }
     .relative{
         padding: 10px;
         opacity: 0;
         position: absolute;
-        top: 40%;
-        left:30%;
+        min-height: 100px;
+        width: 100%;
+        top: 25%;
+        left:0%;
         color: white;
         // height: 200px;
         // width: 400px;
@@ -103,6 +146,7 @@ export default {
         }
     }
     .relative:hover{
+        transition: all 1s ease;
         opacity: 1;
     }
     img:hover~.relative{

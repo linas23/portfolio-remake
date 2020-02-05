@@ -7,19 +7,20 @@
                     <img src="./images/profileimg.jpeg" alt="">
                 <!-- </div> -->
                 <div class="card-title">
-                    <h3>LINAS23</h3>
+                    <h3>LINAS 23</h3>
                 </div>
                 <div class="card-content">
                     <p>
-                        A student of Computer Science Information Technology (5th semester) from Bhaktapur Multiple Campus. Welcome to my portfolio.
+                        A student of Computer Science Information Technology (5th semester) from Bhaktapur Multiple Campus. This is my portfolio.
                     </p>
+                    <span>🦉</span>
                 </div>
             </div>
         
         <div class="tabs left">
             <div v-for="(tab,index) in tabs" :key="index">
                     <router-link :to="tab.linkTo">
-                        <div class="btn-floating indigo pulse ">
+                        <div class="btn-floating black pulse ">
                             <i :class="tab.icon"></i>
                         </div>
                         <br>
@@ -31,16 +32,8 @@
         </div>
         </div>
         <div class="right"> 
-            <div class="card center">
-                <img src="./images/IMG_20180130_085228-02.jpeg" alt="">
-             <div class="blah center white-text">
-            <div class="title">
-                <h2>Grassland</h2>
-            </div>
-            <div class="caption">
-                Favorite place
-            </div>
-            </div>
+            <div class="card center rumpum">
+                <img src="./images/rumpum1.jpg" alt="">
             </div>
         </div>
         </div>
@@ -78,7 +71,7 @@ export default {
                     linkTo:'github'
                 },
                 {
-                    title:'contact',
+                    title:'Contact',
                     icon:'fas fa-2x fa-address-card',
                     linkTo:'contact'
                 }
@@ -109,11 +102,12 @@ export default {
             left:38%;
             a{
                 padding: 15px 10px;
+                color: white;
             }
             a:hover{
                 transition: all 0.5s ease;
                 transform: rotate(2turn);
-                color: red;
+                color: rgb(156, 156, 221);
             }
         }
     }
@@ -121,17 +115,20 @@ export default {
         .card{
              width: 60%;
             box-shadow: 0px 0px 15px black;
-
+            background: #c2cdec;
+            color: rgb(0, 0, 0);
             .card-title{
                 h3{
                 margin: 0;
                 padding: 10px 20px;
+                font-family: 'Cormorant Garamond', serif;
                 }
             }
             .card-content{
                 p{
                     text-align: justify;
                     font-size: 1.1rem;
+                    font-family: 'Vidaloka', serif;
                 }
             }
             img{
@@ -148,18 +145,18 @@ export default {
         display: inline-block;
         .card{
             height: 100vh;
-            width: 90%;
+            width: 100%;
             position: relative;
             overflow:hidden;
             box-shadow: 0px 0px 15px black;
             img{
             // padding: 10px;
-                width: 100%;
+                // width: 110%;
                 height: 115%;
             }
         .blah{
             position: absolute;
-            top: 65%;
+            top: 75%;
             left: 35%;
             // opacity: 0;
         }
@@ -172,13 +169,21 @@ export default {
         justify-content: space-around;
         margin-top:30px;
         height:100px;
-        // align-items: center;
+        background: #32457c;
+        color: white;
         text-align: center;
         overflow:hidden;
         span{
-            font-size: 1.3rem;
-            color: black;
+            font-size: 1.5rem;
+            color: white;
             padding: 10px;
+            font-family: 'Vidaloka', serif;
+        }
+    }
+    .rumpum{
+        transition:all 1s ease;
+        &:hover{
+            transform: rotateY(180deg);
         }
     }
 </style>

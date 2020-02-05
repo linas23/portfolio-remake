@@ -55,6 +55,12 @@ export default {
 </script>
 
 <style lang="scss">
+.header{
+    h1{
+        font-family: 'ZCOOL XiaoWei', serif;
+        padding: 20px;
+        }
+}
     #images{
         width: 100%;
         display: flex;

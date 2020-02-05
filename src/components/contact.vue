@@ -26,6 +26,13 @@
                     <a href="#"><i class="fab fa-3x fa-pinterest"></i></a>
                 </div>
             </div>
+            <footer class="right">
+                <h2>
+                    &copy; linas 23
+                </h2>
+                <b>🦉</b>
+                <b>🐺</b>
+            </footer>
         </div>
     </div>
 </template>
@@ -35,10 +42,16 @@
 @mixin easeOut {
     transition: all 0.7s ease;
 }
+.container{
+    height: 100vh;
+    padding: 50px;
+font-family: 'ZCOOL XiaoWei', serif;
+
+}
 .card{
-    // width: 400px;
-    height: 80vh;
-    margin: 75px;
+    background-image: url("./images/20181028_163359-02.jpeg");
+    background-size: cover;
+    height: 75%;
     box-shadow: 0px 0px 20px black;
     h2{
         margin: 0;
@@ -69,11 +82,11 @@
     .links{
         a{
             padding: 15px;
-            color: blue;
+            color: green;
         }
         i:hover{
             transition: all 0.5s ease;
-            color: red;
+            color: rgb(255, 51, 0);
             transform: rotate(1turn);
         }
     }
