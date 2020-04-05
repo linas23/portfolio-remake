@@ -1,0 +1,24 @@
+/* $mobile :600px;
+$desktop :1440px;
+
+// no tablets for now
+
+@media (min-width:600px){
+    *{
+        all:unset;
+        margin: 0 auto;
+        display: none;
+    }
+    /* #main{
+        background: #32457c;
+        max-width: 90vw;
+        margin: 0 auto;
+        .right{
+            display: none;
+        }
+        .top{
+            width: 100%;
+        }
+    } 
+}
+ */

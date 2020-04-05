@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <div class="container">
+    <div id="contact">
             <div class="card center">
                 <div class="card-title">
                     <h2>
@@ -19,22 +18,13 @@
                     </div>
                 </div>
                 <div class="links">  
-                    <a href="https://www.facebook.com/linas23"><i class="fab fa-3x fa-facebook" ></i></a>
-                    <a href="https://twitter.com/sanil_desemaru"><i class="fab fa-3x fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/sanil_23"><i class="fab fa-3x fa-instagram"></i></a>
-                    <a href="https://github.com/linas23"><i class="fab fa-3x fa-github"></i></a>
-                    <a href="#"><i class="fab fa-3x fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/linas23"><i class="fab fa-2x fa-facebook" ></i></a>
+                    <a href="https://twitter.com/sanil_desemaru"><i class="fab fa-2x fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/sanil_23"><i class="fab fa-2x fa-instagram"></i></a>
+                    <a href="https://github.com/linas23"><i class="fab fa-2x fa-github"></i></a>
                 </div>
             </div>
-            <footer class="right">
-                <h2>
-                    &copy; linas 23
-                </h2>
-                <b>🦉</b>
-                <b>🐺</b>
-            </footer>
         </div>
-    </div>
 </template>
 
 
@@ -42,17 +32,19 @@
 @mixin easeOut {
     transition: all 0.7s ease;
 }
-.container{
-    height: 100vh;
-    padding: 50px;
-font-family: 'ZCOOL XiaoWei', serif;
-
+#contact{
+    font-family: 'ZCOOL XiaoWei', serif;
+    height: 75vh;
 }
 .card{
+    height: 100%;
     background-image: url("./images/20181028_163359-02.jpeg");
     background-size: cover;
-    height: 75%;
-    box-shadow: 0px 0px 20px black;
+    background-repeat: no-repeat;
+    box-shadow: 0px 10px 20px black;
+    display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     h2{
         margin: 0;
         text-transform: capitalize;
@@ -77,8 +69,7 @@ font-family: 'ZCOOL XiaoWei', serif;
             color: white;
             transform: scale(1.2,1.2);
         }
-
-    }
+    } 
     .links{
         a{
             padding: 15px;

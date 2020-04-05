@@ -1,189 +1,190 @@
 <template>
-    <div id="main">
-        <div class="top">
-        <div class="left">
-            <div class="card">
-                <!-- <div class="img"> -->
+    <div>
+        <div id="main">
+            <sequential-entrance  fromLeft> 
+            <div class="me">
+                <div class="fcard">
                     <img src="./images/profileimg.jpeg" alt="">
-                <!-- </div> -->
-                <div class="card-title">
-                    <h3>LINAS 23</h3>
+                    <div class="card-title">
+                        LINAS 23
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            A student of Computer Science Information Technology (5th semester) from Bhaktapur Multiple
+                            Campus. This is my portfolio.
+                        </p>
+                        <span>🦉</span>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <p>
-                        A student of Computer Science Information Technology (5th semester) from Bhaktapur Multiple Campus. This is my portfolio.
-                    </p>
-                    <span>🦉</span>
+                <div class="tabs_left">
+                    <div v-for="(tab,index) in tabs" :key="index">
+                        <a :href="'#' +tab.linkTo">
+                            <div class="btn-floating black pulse ">
+                                <i :class="tab.icon"></i>
+                            </div>
+                            <br>
+                            <span>
+                                {{tab.title}}
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
-        
-        <div class="tabs left">
-            <div v-for="(tab,index) in tabs" :key="index">
-                    <router-link :to="tab.linkTo">
-                        <div class="btn-floating black pulse ">
-                            <i :class="tab.icon"></i>
-                        </div>
-                        <br>
-                        <span>
-                            {{tab.title}}
-                        </span>
-                    </router-link>
-            </div>
-        </div>
-        </div>
-        <div class="right"> 
-            <div class="card center rumpum">
+             </sequential-entrance>
+             <sequential-entrance fromTop>
+                <div class="links">
+                    <a href="https://www.facebook.com/linas23"><i class="fab fa-2x fa-facebook"></i></a>
+                    <a href="https://twitter.com/sanil_desemaru"><i class="fab fa-2x fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/sanil_23"><i class="fab fa-2x fa-instagram"></i></a>
+                    <a href="https://github.com/linas23"><i class="fab fa-2x fa-github"></i></a>
+                </div>
+             </sequential-entrance>
+             <sequential-entrance fromRight>
+            <div class="rumpum">
                 <img src="./images/rumpum1.jpg" alt="">
             </div>
+             </sequential-entrance>
         </div>
-        </div>
-        <div class="links">
-                <a href="https://www.facebook.com/linas23"><i class="fab fa-3x fa-facebook" ></i></a>
-                <a href="https://twitter.com/sanil_desemaru"><i class="fab fa-3x fa-twitter"></i></a>
-                <a href="https://www.instagram.com/sanil_23"><i class="fab fa-3x fa-instagram"></i></a>
-                <a href="https://github.com/linas23"><i class="fab fa-3x fa-github"></i></a>
-                <a href="#"><i class="fab fa-3x fa-pinterest"></i></a>
-        </div>
-        <threeImages></threeImages>
-        <compForm></compForm>
+        <compAboutMe></compAboutMe>
+        <compGithub></compGithub>
+        <compContact></compContact>
+        <!-- <compCarousel></compCarousel> -->
+        <!-- <compForm></compForm> -->
     </div>
-   
 </template>
+
+
 <script>
-import threeImages from '@/components/threeimages.vue';
-import compForm from '@/components/form.vue';
-export default {
-    components:{
-        threeImages,
-        compForm
-    },
-    data(){
-        return{
-            tabs:[
-                {
-                    title:'About me',
-                    icon:'fas fa-2x fa-user',
-                    linkTo:'about_me'
-                },
-                {
-                    title:'Github',
-                    icon:'fab fa-2x fa-github',
-                    linkTo:'github'
-                },
-                {
-                    title:'Contact',
-                    icon:'fas fa-2x fa-address-card',
-                    linkTo:'contact'
-                }
-            ],
-            
-        }
-    },
-    filters:{
-        capitalize(value){
-            return value.toUpperCase();
+    // import compCarousel from '@/components/carousel.vue'
+    // import compForm from '@/components/form.vue';
+    import compGithub from '@/components/github';
+    import compContact from '@/components/contact';
+    import compAboutMe from '@/components/about_me';
+    export default {
+        components: {
+            // compCarousel,
+            // compForm
+            compGithub,
+            compContact,
+            compAboutMe
+        },
+        data() {
+            return {
+                tabs: [{
+                        title: 'About me',
+                        icon: 'fas fa-2x fa-user',
+                        linkTo: 'about_me'
+                    },
+                    {
+                        title: 'Github',
+                        icon: 'fab fa-2x fa-github',
+                        linkTo: 'github'
+                    },
+                    {
+                        title: 'Contact',
+                        icon: 'fas fa-2x fa-address-card',
+                        linkTo: 'contact'
+                    }
+                ],
+
+            }
+        },
+        filters: {
+            capitalize(value) {
+                return value.toUpperCase();
+            }
         }
     }
-}
 </script>
-<style lang="scss">
-    #main{
-        // background: black;
-        // height: 100vh;
-        padding: 10px 100px;
-        .top{
-            display: flex;
-        }
-        .links{
+<style lang="scss" scoped>
+    #main {
+        width:90%;
+        margin:0 auto;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 45% 5% 50%;
+        justify-content: space-between;
+        align-items: center;
+        .links {
             display: flex;
             flex-direction: column;
-            position:absolute;
-            top: 20%;
-            left:38%;
-            a{
+            a {
                 padding: 15px 10px;
                 color: white;
             }
-            a:hover{
-                transition: all 0.5s ease;
-                transform: rotate(2turn);
+            a:hover {
+                transition: all 0.75s ease;
+                transform: rotate(1turn);
                 color: rgb(156, 156, 221);
             }
         }
     }
-    .left{
-        .card{
-             width: 60%;
+
+    .me {
+        height: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 25px;
+        width:100%;
+        .fcard {
+            background:white;
+            width:70%;
+            margin:0 auto;
             box-shadow: 0px 0px 15px black;
-            background: #c2cdec;
-            color: rgb(0, 0, 0);
-            .card-title{
-                h3{
-                margin: 0;
-                padding: 10px 20px;
+            overflow: hidden;
+            padding:20px;
+            .card-title {
+                font-size:1.5rem;
+                font-weight:700;
+                margin:0px;
                 font-family: 'Cormorant Garamond', serif;
-                }
             }
-            .card-content{
-                p{
+            .card-content {
+                p {
                     text-align: justify;
-                    font-size: 1.1rem;
+                    font-size: 0.9rem;
                     font-family: 'Vidaloka', serif;
                 }
             }
-            img{
-                width: 100%
+            img {
+                width: 100%;
+                transition:all 1s ease;
             }
-            img:hover{
-                transition: all 0.5s ease;
-                border-radius: 50%;
-                border: 2px solid red;
+            &:hover{
+                img{
+                    transform: scale(1.1) ;
+                }
             }
         }
-    }
-    .right{
-        display: inline-block;
-        .card{
-            height: 100vh;
-            width: 100%;
-            position: relative;
-            overflow:hidden;
-            box-shadow: 0px 0px 15px black;
-            img{
-            // padding: 10px;
-                // width: 110%;
-                height: 115%;
-            }
-        .blah{
-            position: absolute;
-            top: 75%;
-            left: 35%;
-            // opacity: 0;
-        }
-        }
-    }
-    .tabs{
-        padding: 10px;
-        max-width: 60%;
-        display: flex; 
-        justify-content: space-around;
-        margin-top:30px;
-        height:100px;
-        background: #32457c;
-        color: white;
-        text-align: center;
-        overflow:hidden;
-        span{
-            font-size: 1.5rem;
+        .tabs_left {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-evenly;
             color: white;
-            padding: 10px;
-            font-family: 'Vidaloka', serif;
+            text-align: center;
+            span {
+                font-size: 1rem;
+                color: white;
+                padding: 10px;
+                font-family: 'Vidaloka', serif;
+            }
         }
     }
-    .rumpum{
-        transition:all 1s ease;
-        &:hover{
-            transform: rotateY(180deg);
+ .rumpum {
+     width: 100%;
+     height:100%;
+     padding: 0px 20px;
+        img{
+            transform: scale(0.9);
+            width: 100%;
+            box-shadow: 0px 0px 15px black;
+            transition: all 1s ease;
+            &:hover {
+                transform: rotateY(180deg) scale(0.9);
+            }
         }
     }
+
+    
 </style>
