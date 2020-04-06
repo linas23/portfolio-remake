@@ -3,9 +3,9 @@
     <div id="about_me">
         <div class="thisIsMe">
             <div>
-                <h2>
+                <h3>
                     Who Am I ?
-                </h2>
+                </h3>
                 <div class="content">
                     Namaste,
                     <br>
@@ -32,31 +32,14 @@
                 <img src="../assets/images/undraw_developer_activity_bv83.svg" alt="">
             </div>
         </div>
+        
     </div>
-            <div class="experience">
-                    <h3 class="black-text center">
-                        Experiences on...
-                    </h3>
-                    <carousel :autoplay="true" >
-                        <slide v-for="(image,index) in images" :key="index">
-                            <img :src="image.src" alt="">
-                            <!-- <div class="progress">
-                                <div class="determinate" :style="image.skill"></div>
-                            </div> -->
-                        </slide>
-                    </carousel>
-                        
-        </div>
 </div>
 </template>
 <script>
-    export default {
-        data() {
-            return {
-                images: this.$store.getters.skills
-            }
-        }
-    }
+    
+
+    
 </script>
 
 <style lang="scss" scoped>
@@ -67,10 +50,10 @@
         font-family: 'Arapey', serif;
         width:90%;
         margin: 0 auto;
-        color: white;
+        color: black;
+        padding: 0px 100px ;
     }
     .thisIsMe{
-        height:70vh;
         display:grid;
         grid-template-columns: 60% 40%;
         align-items:center;
@@ -78,18 +61,6 @@
             width:100%;
         }
     }
-    .experience{
-        height: 50vh;
-        display: flex;
-        width: 50%;
-        margin: 100px auto;
-        flex-direction: column;
-        justify-content: space-between;
-        img{
-            height: 100%;
-            width: 100px;
-        }
-    }
-   
+    
 
 </style>

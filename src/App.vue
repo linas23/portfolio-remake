@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <div>
-      <router-link to="/" >
-        <i class="material-icons home">home</i>
-      </router-link>
-    </div>
     <router-view/>
   </div>
 </template>
@@ -13,20 +8,10 @@
 *{
   margin:0px;
   padding: 0px;
+  box-sizing: border-box;
 }
-  .home{
-    z-index: 1000;
-    position: fixed;
-    top:50%;
-    right: 10px;
-    font-size: 3rem;
-    color:white;
-    cursor: pointer;
-    background-color: transparent;
-    visibility: hidden;
-  }
 #app{
-  background: #32457c;
+  background: whitesmoke;
   max-width: 100vw;
   overflow: hidden;
 }

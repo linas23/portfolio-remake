@@ -1,20 +1,20 @@
 <template>
     <div id="contact">
-            <div class="card center">
+            <div class="cards center">
                 <div class="card-title">
-                    <h2>
-                    text me before calling
-                    </h2>
+                    <h3>
+                    text me before calling 😜
+                    </h3>
                 </div>
                 <div class="details">
                     <div class="address">
-                        Address :   ittachhen-15, Bhaktapur, Nepal
+                        Address :ittachhen-15, Bhaktapur, Nepal
                     </div>
                     <div class="phone">
-                        Phone   :   9860678131
+                        Phone   :9860678131
                     </div>
                     <div class="email">
-                        E-mail  :   desemaru77@gmail.com
+                        E-mail  :desemaru77@gmail.com
                     </div>
                 </div>
                 <div class="links">  
@@ -34,50 +34,37 @@
 }
 #contact{
     font-family: 'ZCOOL XiaoWei', serif;
-    height: 75vh;
+    height: 100%;
 }
-.card{
+.cards{
+    padding: 0px 0px 40px 20px;
     height: 100%;
     background-image: url("./images/20181028_163359-02.jpeg");
-    background-size: cover;
+    background-size: 110% 100%;
     background-repeat: no-repeat;
-    box-shadow: 0px 10px 20px black;
     display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
     h2{
-        margin: 0;
         text-transform: capitalize;
-        padding: 20px;
+        padding: 0px;
     }
     .details{
-        display: flex;
-        flex-direction: column;
-        height: 70%;
-        justify-content: space-evenly;
         div{
-            border: 2px solid black;
-            width: 50%;
             height: 40px;
             margin: 0 auto;
             font-size: 1.4rem;
         }
-        div:hover{
-            border: 2px solid red outset;
-            transition: all 0.5s ease;
-            background: black;
-            color: white;
-            transform: scale(1.2,1.2);
-        }
-    } 
+    }  
     .links{
         a{
             padding: 15px;
-            color: green;
+            color: rgb(5, 155, 255);
         }
         i:hover{
-            transition: all 0.5s ease;
-            color: rgb(255, 51, 0);
+            transition: all 0.75s ease;
+            color: rgb(51, 51, 105);
             transform: rotate(1turn);
         }
     }

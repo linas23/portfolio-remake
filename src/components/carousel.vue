@@ -1,18 +1,34 @@
 <template>
     <div id="carousel">
-        <header class="center white-text">
+        <header class="">
             <h3>Some of the photographs</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim placeat perferendis obcaecati. Deserunt nam beatae similique libero sit nihil molestiae, quod soluta consequuntur quas nisi, non nostrum aperiam atque tempore.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim placeat perferendis obcaecati. Deserunt nam beatae similique libero sit nihil molestiae, quod soluta consequuntur quas nisi, non nostrum aperiam atque tempore.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim placeat perferendis obcaecati. Deserunt nam beatae similique libero sit nihil molestiae, quod soluta consequuntur quas nisi, non nostrum aperiam atque tempore.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim placeat perferendis obcaecati. Deserunt nam beatae similique libero sit nihil molestiae, quod soluta consequuntur quas nisi, non nostrum aperiam atque tempore.
+            </p>
         </header>
-        <carousel>
-            <slide v-for="(image,index) in images" :key="index">
-                <img :src="image.src" :alt="image.title">
-            </slide>
-        </carousel>
+        <div class="carousel">
+            <div class="carousel-item"  v-for="(image,index) in images" :key="index" >
+                <img :src="image.src" alt="">
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-// import image1 from './images/img/20180908_151847-01.jpeg';
+import M from 'materialize-css/dist/js/materialize.min'
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, {
+        dist:-50,
+        padding:30,
+        numVisible:5
+    });
+    instances();
+  });
+import image1 from './images/img/20180908_151847-01.jpeg';
 import image2 from './images/img/20180908_152939-01.jpeg';
 import image3 from './images/img/20181028_083311-01.jpeg';
 import image4 from './images/img/20190416_152725-01-01.jpeg';
@@ -25,7 +41,7 @@ export default {
         return{
             images:[
                 {
-                    src:image5
+                    src:image1
                 },
                 {
                     src:image2
@@ -54,21 +70,21 @@ export default {
 
 <style lang="scss">
     #carousel{
-        display: grid;
-        grid-template-rows: 15% 85%;
-        justify-content: space-between;
-        align-items: center;
-        height:100vh;
-        .VueCarousel{
-            .VueCarousel-slide{
-                height:500px;
-                width:450px; 
-                img{
-                    // padding: 50px 0px;
-                    height:100%;
-                    width:100%;    
-                    object-fit: contain;
-                }
+        width: 90%;
+        margin: 0 auto;
+        height: 100vh;
+        margin-bottom: 10vh;
+        h3{
+            padding: 0px 100px;
+        }
+        .carousel{
+            // border:1px solid green;
+            height: 80%;
+            // padding: 100px 0px;
+            overflow: hidden;
+            img{
+                height: auto;
+                transform: scale(1.5);
             }
         }
     }

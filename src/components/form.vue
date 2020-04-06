@@ -1,77 +1,123 @@
 <template>
     <div class="form ">
-        <div class="card ">
-            <div class="card-title center ">
-                <h2>
-                Hello There ☺
-                </h2>
+        <div class="">
+            <div class="center">
+                <h3>
+                Got some messages ? 🙂
+                </h3>
             </div>
-            <div class="card-content">
-                <form @submit.prevent="sendInfo">
-                    <div class="input_field">
-                        <div class="material-icons">person</div>
-                        <input type="text" placeholder="enter your name" v-model="name">
+            <div class="row">
+                <!-- -->
+                <form  class="col s12">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" type="text" v-model="name">
+                        <label for="name">Name</label>
                     </div>
-                    <div class="input-field">
-                        <div class="material-icons">email</div>
-                        <input type="email" placeholder="enter your email" v-model="email">
+                    <div class="input-field col s6">
+                        <div class="material-icons prefix">email</div>
+                        <input type="email" id="email" v-model="email">
+                        <label for="email">Email</label>
                     </div>
-                    <p v-if="feedback" v-html="feedback"></p>
-                    <div class="card-actions">
-                        <button class="btn red" type="submit">
+                    <div class="input-field col s12">
+                        <div class="material-icons prefix">message</div>
+                        <textarea id="message" class="materialize-textarea" v-model="message"></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <p v-if="feedback" v-html="feedback" class="red-text"></p>
+                    <div class="card-actions center">
+                        <a class="btn black-text waves-effect waves-light" @click.prevent="sendInfo" >
                             Send
-                        </button>
+                        </a>
                     </div>
+                     <!-- <div id="modal" class="modal" v-show="feedback">
+                        <div class="modal-content" v-html="feedback">
+                        
+                        </div>
+                        <div class="modal-footer">
+                        <a class="modal-close waves-effect waves-teal btn-flat">Close</a>
+                        </div>
+                    </div> -->
                 </form>
             </div>
         </div>
     </div>
 </template>
 <script>
+ /*  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector("textarea#message").characterCounter();
+  }); */
+import M from 'materialize-css/dist/js/materialize.min'
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+    instances();
+  });
 /* eslint-disable no-console */
 import {    db     } from '@/firebase/init';
 export default {
     data(){
         return{
-            email:null,
-            name:null,
-            feedback:null
+            email:'',
+            name:'',
+            message:'',
+            feedback:'',
         }
     },
     methods:{
         sendInfo(){
             console.log('sending informations');
-            console.log(this.email,this.name);
+            this.feedback = '';
             if(!this.name){
-                this.feedback='please enter your name'
+                this.feedback += '<span> please enter your name.</span>'
             }
-            if(this.name&&this.email){
-                db.collection("emails").add({
+            if(!this.email){
+                this.feedback += '<span> Please provide your email address.</span>'
+            }
+            if(this.email){
+                const email = this.email;
+                if(email.indexOf("@") == -1){
+                    this.feedback += '<span> Please enter a valid email address.</span>';
+                }
+            }
+            if(!this.message){
+                this.feedback += '<span>The least you can do is say me a hello</span>'
+            }
+            if(this.name&&this.email&&this.message){
+                db.collection("messages").add({
                     name:this.name,
                     email:this.email,
+                    message:this.message
             }).then(()=>{
-                console.log('data submitted');
-                this.feedback=null;
+                this.feedback=`<span>I got your message. Get in touch with you soon.</span>`;
+                setTimeout(() => {
+                    this.feedback = null;
+                    this.reset();
+                    return;
+                    }, 2000);
+                
             }).catch(err=>{
-                this.feedback=null;
-                this.feedback=err;
+                console.log(err)
+                this.feedback=`<p>Oops! something went wrong. Please try again.</p>`;
             })
             }
-    }
+            setTimeout(() => {
+                this.feedback = null;
+                this.reset();
+            }, 3000);
+        },
+        reset(){
+            this.name = this.email = this.message = null;
+        }
     }
 }
 </script>
 <style lang="scss">
-    .form{
-        margin: 100px 0px;
+     .form{
         font-family: 'ZCOOL XiaoWei', serif;
-
-        .card{
-            width: 600px;
-            margin: 0 auto;
-            .card-title{
-                padding: 5px;
-            }
+        .btn{
+            text-transform: capitalize;
         }
-    }
+    } 
 </style>

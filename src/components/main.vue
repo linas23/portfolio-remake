@@ -11,7 +11,7 @@
                     <div class="card-content">
                         <p>
                             A student of Computer Science Information Technology (5th semester) from Bhaktapur Multiple
-                            Campus. This is my portfolio.
+                            Campus. Welcome to my portfolio.
                         </p>
                         <span>🦉</span>
                     </div>
@@ -46,27 +46,33 @@
              </sequential-entrance>
         </div>
         <compAboutMe></compAboutMe>
+        <experiences></experiences>
         <compGithub></compGithub>
-        <compContact></compContact>
-        <!-- <compCarousel></compCarousel> -->
-        <!-- <compForm></compForm> -->
+        <compCarousel></compCarousel>
+        <footer>
+            <compForm></compForm>
+            <compContact></compContact>
+        </footer>
     </div>
 </template>
 
 
 <script>
-    // import compCarousel from '@/components/carousel.vue'
-    // import compForm from '@/components/form.vue';
+    import compCarousel from '@/components/carousel.vue'
+    import compForm from '@/components/form.vue';
     import compGithub from '@/components/github';
     import compContact from '@/components/contact';
     import compAboutMe from '@/components/about_me';
+    import experiences from '@/components/experiences'
     export default {
         components: {
-            // compCarousel,
-            // compForm
+            compCarousel,
+            compForm,
             compGithub,
             compContact,
-            compAboutMe
+            compAboutMe,
+            experiences
+
         },
         data() {
             return {
@@ -110,12 +116,12 @@
             flex-direction: column;
             a {
                 padding: 15px 10px;
-                color: white;
+                color: rgb(5, 155, 255);
             }
             a:hover {
                 transition: all 0.75s ease;
                 transform: rotate(1turn);
-                color: rgb(156, 156, 221);
+                color: rgb(51, 51, 105);
             }
         }
     }
@@ -128,16 +134,15 @@
         padding: 25px;
         width:100%;
         .fcard {
-            background:white;
             width:70%;
             margin:0 auto;
-            box-shadow: 0px 0px 15px black;
+            box-shadow: 0px 0px 10px black;
             overflow: hidden;
             padding:20px;
             .card-title {
                 font-size:1.5rem;
                 font-weight:700;
-                margin:0px;
+                margin:5px 0px;
                 font-family: 'Cormorant Garamond', serif;
             }
             .card-content {
@@ -161,11 +166,10 @@
             padding: 20px 40px;
             display: flex;
             justify-content: space-evenly;
-            color: white;
             text-align: center;
             span {
+                color: black;
                 font-size: 1rem;
-                color: white;
                 padding: 10px;
                 font-family: 'Vidaloka', serif;
             }
@@ -178,7 +182,7 @@
         img{
             transform: scale(0.9);
             width: 100%;
-            box-shadow: 0px 0px 15px black;
+            box-shadow: 0px 0px 10px rgb(116, 112, 112);
             transition: all 1s ease;
             &:hover {
                 transform: rotateY(180deg) scale(0.9);
@@ -186,5 +190,17 @@
         }
     }
 
+    footer{
+        max-height: 70vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+   /*  @media screen and (max-width:576px) {
+        .me{
+            display: none;
+        }
+    } */
     
 </style>

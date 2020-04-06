@@ -5,6 +5,7 @@ import store from './store'
 import VueCarousel from 'vue-carousel';
 import SequentialEntrance from 'vue-sequential-entrance'
 import 'vue-sequential-entrance/vue-sequential-entrance.css'
+import 'materialize-css/dist/js/materialize.min'
 Vue.use(VueCarousel);
 Vue.use(SequentialEntrance);
 Vue.config.productionTip = false
