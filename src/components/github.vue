@@ -1,7 +1,11 @@
 <template>
         <!-- Mxy git -->
     <div id="github">
-            <h2 class="black-text">Some of my projects in GitHub</h2>
+        <vue-typed-js :strings="['Some of my projects in GitHub']" :loop="true" :fadeOut="true" :typeSpeed="100">
+            <h2 class="typing"></h2>
+        </vue-typed-js>
+            <vue-typer text='' :erase-on-complete='false' :repeat="infinity"></vue-typer>
+            <br>
             <div class="projects">
                 <div class="card tooltipped" v-for="(project,index) in projects" :key="index" data-position="bottom" data-tooltip="Do visit once">
                         <img class="card-img" v-bind:src="project.img"  alt="">
@@ -69,7 +73,7 @@ export default {
             {
                 img:bunchofapis,
                 title:'API use',
-                description:'get news and play videos from youtube',
+                description:'get news, word definitions and play videos from youtube. Some of the functionality may not work due to the need of updating API keys.',
                 github: 'https://wordapp23.herokuapp.com/'
             },
             {
@@ -96,16 +100,13 @@ export default {
 }
 </script>   
 <style lang="scss" scoped>
-@mixin easeOut {
-    transition: all 0.7s ease;
-}
+
 #github{
     width:90%;
     margin:0px auto;
     font-family: 'ZCOOL XiaoWei', serif;
     padding: 0 100px;
 }
-
 .projects{
     display: flex;
     flex-direction: row;
@@ -117,7 +118,7 @@ export default {
     *{
         padding: 0px;
     }
-    max-width: 30%;
+    width: 30%;
     margin: 30px 0px;
     box-shadow: 0px 0px 10px black;
     min-height:300px;
@@ -134,10 +135,45 @@ export default {
         padding: 0px 20px;
     }
     .link{
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     &:hover{
         transform: scale(1.1);
+    }
+}
+
+@media screen and (max-width:576px){
+    #github{
+        padding: 0px;
+    }
+    .projects{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        flex-wrap:wrap;
+    }
+    h2{
+        font-size: 2.3rem;
+        min-height: 2.5rem;;
+    }
+    .card{
+        width: 90%;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        img{
+            width:100%;
+            padding: 5px;
+        }
+        .card-title{
+            font-size: 2rem;
+        }
+        .card-title,.card-content{
+            font-size: 1.5rem;
+        }
+        .link{
+            font-size: 1.3rem;
+        }
     }
 }
 

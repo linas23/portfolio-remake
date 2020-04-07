@@ -3,6 +3,7 @@
             <h2 class="black-text ">
                 Experiences on...
             </h2>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla voluptatum iste hic architecto veritatis tempore tenetur, numquam eveniet sapiente. Debitis earum esse, impedit est quisquam ducimus. Totam repellat laudantium consequuntur!
             <div class="carousel">
                 <div class="carousel-item"  v-for="(image,index) in images" :key="index" >
                     <img :src="image.src" alt="">
@@ -42,5 +43,16 @@ export default {
     h2{
         padding: 0px 100px;
     }
-   
+   @media screen and (max-width:576px){
+       .experience{
+        display: flex;
+        width: 100%;
+        margin: 0px auto;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    h2{
+        padding: 0px 25px ;
+    }
+   }
 </style>

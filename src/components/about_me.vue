@@ -13,7 +13,7 @@
                     It's been a while, learning the different tools for the
                     web development, i've become preety confident working in front-end
                     part of the web based projects. You can view some of the projects i have completed
-                    in <router-link to="github">my github</router-link> section of this portfolio.<br>
+                    in <a href="#github">my github</a> section of this portfolio.<br>
                     Here are the lists of tools and programming languages i learned so far: <br>
                     <li>HTML, CSS, Bootstrap, SCSS, JavaScript</li>
                     <li>A front-end framework "Vue js" </li>
@@ -21,7 +21,8 @@
                     <li>Basics of C, C++, Python, Php</li>
                     Being a student of computer science, i am quite interested in
                     the world of programming. I wish to become a full-stack web developer and hopefully a software engineer
-                    in near future. So, wish me luck. Apart from these, i am passionate about photography.
+                    in near future. So, wish me luck. Apart from these, i am passionate about photography. Have a look at a 
+                    photography section below. <a href="#photography">Photography</a>
                     <br>
                     <strong>
                         PS: My photo gallery website will be available soon.
@@ -60,7 +61,25 @@
         img{
             width:100%;
         }
+        .content{
+            font-size: 1.5rem;
+        }
     }
     
-
+@media screen and (max-width:576px){
+    #about_me {
+        padding: 0px ;
+    }
+    .thisIsMe{
+        display:flex;
+        flex-direction: column;
+        img{
+            transform: scale(0.9);
+            width:100%;
+        }
+        .content{
+            text-align: justify;;
+        }
+    }
+}
 </style>

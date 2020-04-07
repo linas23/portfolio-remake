@@ -3,7 +3,7 @@
             <div class="cards center">
                 <div class="card-title">
                     <h3>
-                    text me before calling 😜
+                    text me before calling <span class="emoji"> 😜</span>
                     </h3>
                 </div>
                 <div class="details">
@@ -68,5 +68,43 @@
             transform: rotate(1turn);
         }
     }
+    
 }
+@media screen and (max-width:576px){
+     #contact{
+        width: 100vw;
+     }
+     .cards{
+        padding: 0px 0px 40px 20px;
+        background-image: url("./images/20181028_163359-02.jpeg");
+        background-size: 105% 100%;
+        h3{
+            text-transform: capitalize;
+            padding: 0px;
+            .emoji{
+                display: none;
+            }
+        }
+        .details{
+            div{
+                height: 40px;
+                margin: 0 auto;
+                font-size: 1.4rem;
+            }
+        }  
+        .links{
+            font-size: 1.3rem;
+            a{
+                padding: 15px;
+                color: rgb(5, 155, 255);
+            }
+            i:hover{
+                transition: all 0.75s ease;
+                color: rgb(51, 51, 105);
+                transform: rotate(1turn);
+            }
+        }
+        
+    }   
+    }
 </style>

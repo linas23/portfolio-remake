@@ -1,8 +1,8 @@
 <template>
     <div>
         <div id="main">
-            <sequential-entrance  fromLeft> 
             <div class="me">
+            <sequential-entrance  fromLeft> 
                 <div class="fcard">
                     <img src="./images/profileimg.jpeg" alt="">
                     <div class="card-title">
@@ -13,24 +13,26 @@
                             A student of Computer Science Information Technology (5th semester) from Bhaktapur Multiple
                             Campus. Welcome to my portfolio.
                         </p>
-                        <span>🦉</span>
+                        <b>🦉</b>
                     </div>
                 </div>
-                <div class="tabs_left">
-                    <div v-for="(tab,index) in tabs" :key="index">
-                        <a :href="'#' +tab.linkTo">
-                            <div class="btn-floating black pulse ">
-                                <i :class="tab.icon"></i>
-                            </div>
-                            <br>
-                            <span>
-                                {{tab.title}}
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
              </sequential-entrance>
+                <sequential-entrance  fromRight> 
+                    <div class="tabs_left">
+                            <div v-for="(tab,index) in tabs" :key="index">
+                                <a :href="'#' +tab.linkTo">
+                                    <div class="btn-floating black pulse ">
+                                        <i :class="tab.icon"></i>
+                                    </div>
+                                    <br>
+                                    <span>
+                                        {{tab.title}}
+                                    </span>
+                                </a>
+                            </div>
+                    </div>
+                </sequential-entrance>
+            </div>
              <sequential-entrance fromTop>
                 <div class="links">
                     <a href="https://www.facebook.com/linas23"><i class="fab fa-2x fa-facebook"></i></a>
@@ -134,13 +136,13 @@
         padding: 25px;
         width:100%;
         .fcard {
-            width:70%;
+            width:80%;
             margin:0 auto;
             box-shadow: 0px 0px 10px black;
             overflow: hidden;
             padding:20px;
             .card-title {
-                font-size:1.5rem;
+                font-size:2rem;
                 font-weight:700;
                 margin:5px 0px;
                 font-family: 'Cormorant Garamond', serif;
@@ -148,7 +150,7 @@
             .card-content {
                 p {
                     text-align: justify;
-                    font-size: 0.9rem;
+                    font-size: 1.1rem;
                     font-family: 'Vidaloka', serif;
                 }
             }
@@ -169,7 +171,7 @@
             text-align: center;
             span {
                 color: black;
-                font-size: 1rem;
+                font-size: 1.2rem;
                 padding: 10px;
                 font-family: 'Vidaloka', serif;
             }
@@ -197,10 +199,55 @@
         grid-template-columns: repeat(2,1fr);
     }
 
-   /*  @media screen and (max-width:576px) {
-        .me{
-            display: none;
+    @media screen and (max-width:576px) {
+        
+         #main {
+            width:90%;
+            margin:0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 30px 0px;
+            .links {
+                width: 70vw;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 1.5rem;
+            }
+    }
+
+    .me {
+        .fcard {
+            width:100%;
+            margin:0 auto;
+            
+            .card-content {
+                p {
+                    font-size: 1.2rem;
+                }
+            }
         }
-    } */
+        .tabs_left {
+            width: 100%;
+            justify-content: space-between;
+            span {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .rumpum {
+        display: none;
+        }
+
+    footer{
+        max-height: unset;
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        }
+    }
     
 </style>

@@ -115,9 +115,15 @@ export default {
 </script>
 <style lang="scss">
      .form{
+         width: 100%;
         font-family: 'ZCOOL XiaoWei', serif;
         .btn{
             text-transform: capitalize;
         }
     } 
+    @media screen and (max-width:576px){
+     .form{
+        width: 100vw;
+     }
+    }
 </style>

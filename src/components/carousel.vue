@@ -1,14 +1,15 @@
 <template>
     <div id="carousel">
         <header class="">
-            <h3>Some of the photographs</h3>
+            <vue-typed-js :strings="['Some of the photographs.']" :loop="true" :fadeOut="true" :typeSpeed="100">
+            <h2 class="typing"></h2>
+            </vue-typed-js>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim placeat perferendis obcaecati. Deserunt nam beatae similique libero sit nihil molestiae, quod soluta consequuntur quas nisi, non nostrum aperiam atque tempore.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim placeat perferendis obcaecati. Deserunt nam beatae similique libero sit nihil molestiae, quod soluta consequuntur quas nisi, non nostrum aperiam atque tempore.
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim placeat perferendis obcaecati. Deserunt nam beatae similique libero sit nihil molestiae, quod soluta consequuntur quas nisi, non nostrum aperiam atque tempore.
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim placeat perferendis obcaecati. Deserunt nam beatae similique libero sit nihil molestiae, quod soluta consequuntur quas nisi, non nostrum aperiam atque tempore.
             </p>
         </header>
+        
         <div class="carousel">
             <div class="carousel-item"  v-for="(image,index) in images" :key="index" >
                 <img :src="image.src" alt="">
@@ -28,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     instances();
   });
+
+//  vue lightbox
+// import VuePureLightbox from 'vue-pure-lightbox'
+
 import image1 from './images/img/20180908_151847-01.jpeg';
 import image2 from './images/img/20180908_152939-01.jpeg';
 import image3 from './images/img/20181028_083311-01.jpeg';
@@ -63,6 +68,9 @@ export default {
                 }
             ]
         }
+    },
+    components: {
+        // VuePureLightbox,
     }
 
 }
@@ -78,13 +86,30 @@ export default {
             padding: 0px 100px;
         }
         .carousel{
-            // border:1px solid green;
             height: 80%;
-            // padding: 100px 0px;
             overflow: hidden;
             img{
                 height: auto;
                 transform: scale(1.5);
+            }
+        }
+    }
+    
+    @media screen and (max-width:576px){
+        #carousel{
+            width: 100%;
+            padding-bottom: 20vh;
+            margin-bottom: 20vh;
+            h2{
+                font-size: 2.3rem;
+                min-height: 2.5rem;
+            }
+            h2,p{
+                padding: 0px 25px;
+            }
+            .carousel{
+                height: 80%;
+                overflow: hidden;
             }
         }
     }
