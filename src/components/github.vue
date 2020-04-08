@@ -1,10 +1,11 @@
 <template>
         <!-- Mxy git -->
     <div id="github">
-        <vue-typed-js :strings="['Some of my projects in GitHub']" :loop="true" :fadeOut="true" :typeSpeed="100">
+        <!-- <vue-typed-js :strings="['Projects in GitHub']" :loop="true" :fadeOut="true" :typeSpeed="100">
             <h2 class="typing"></h2>
-        </vue-typed-js>
-            <vue-typer text='' :erase-on-complete='false' :repeat="infinity"></vue-typer>
+        </vue-typed-js> -->
+            <h2>Projects in Github</h2>
+            <!-- <vue-typer text='' :erase-on-complete='false' :repeat="infinity"></vue-typer> -->
             <br>
             <div class="projects">
                 <div class="card tooltipped" v-for="(project,index) in projects" :key="index" data-position="bottom" data-tooltip="Do visit once">
@@ -16,7 +17,8 @@
                                 {{project.description}}
                             </p>
                         </div>  
-                </div>   
+                </div>  
+                    <img src="../assets/images/undraw_developer_activity_bv83.svg" class="illustration" alt=""> 
             </div>
     </div>
 </template>
@@ -55,19 +57,19 @@ export default {
             {
                 img:findAnother,
                 title:'Finding Another',
-                description:'Get a match and try to win the game',
+                description:'Get a match and try to win the game.',
                 github:'https://github.com/linas23/findAnother',
             },
             {
                 img:rk,
                 title:'Rajamati Kumati',
-                description:'A dream project',
+                description:'A dream project.',
                 github:'Sorry not available in Github yet.'
             },
             {
                 img:laughoutloud,
                 title:'A joke for you',
-                description:'please smile',
+                description:'please smile for a while.',
                 github:'https://laughoutloud23.herokuapp.com/'
             },
             {
@@ -91,7 +93,7 @@ export default {
             {
                 img:oldportfolio,
                 title:'My old portfolio',
-                description:'here is my old portfolio',
+                description:'here is my old portfolio.',
                 github: 'https://linas23.github.io/myportfolio23/' 
             },
         ]
@@ -107,17 +109,19 @@ export default {
     font-family: 'ZCOOL XiaoWei', serif;
     padding: 0 100px;
 }
+h2{
+    color:#410093;
+}
 .projects{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap:wrap;
 }
-
+.illustration{
+    width:30%
+}
 .card{
-    *{
-        padding: 0px;
-    }
     width: 30%;
     margin: 30px 0px;
     box-shadow: 0px 0px 10px black;
@@ -127,15 +131,19 @@ export default {
     img{
         width:100%;
     }
+    p{
+        font-size: 1.1rem;
+    }
     .card-title{
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         padding: 0px;
     }
     .card-title,.card-content{
         padding: 0px 20px;
     }
     .link{
-        font-size: 1rem;
+        font-size: 1.2rem;
+        word-break: break-all;
     }
     &:hover{
         transform: scale(1.1);
@@ -154,13 +162,14 @@ export default {
         flex-wrap:wrap;
     }
     h2{
-        font-size: 2.3rem;
-        min-height: 2.5rem;;
+        font-size: 2.5rem;
+    }
+    .illustration{
+        width:90%
     }
     .card{
         width: 90%;
         padding-bottom: 20px;
-        border-radius: 10px;
         img{
             width:100%;
             padding: 5px;

@@ -207,22 +207,23 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
             padding: 30px 0px;
             .links {
                 width: 70vw;
                 flex-direction: row;
                 justify-content: space-between;
-                font-size: 1.5rem;
+                font-size: 1.25rem;
             }
     }
 
     .me {
+        padding: 0px;
+        width: 100%;
         .fcard {
             width:100%;
             margin:0 auto;
-            
             .card-content {
                 p {
                     font-size: 1.2rem;
@@ -230,6 +231,7 @@
             }
         }
         .tabs_left {
+            padding: 10px 0px;
             width: 100%;
             justify-content: space-between;
             span {
@@ -243,7 +245,7 @@
 
     footer{
         max-height: unset;
-        height: 80vh;
+        height: 100vh;
         width: 100%;
         display: flex;
         flex-direction: column;

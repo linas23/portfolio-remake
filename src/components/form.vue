@@ -3,7 +3,7 @@
         <div class="">
             <div class="center">
                 <h3>
-                Got some messages ? 🙂
+                Got some messages ? <span class="emoji"> 🙂</span>
                 </h3>
             </div>
             <div class="row">
@@ -115,15 +115,28 @@ export default {
 </script>
 <style lang="scss">
      .form{
+         height: 50vh;
          width: 100%;
         font-family: 'ZCOOL XiaoWei', serif;
+        background-image: url('./images/pngguru.com (4).png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: rgba(211, 208, 212, 0.8);
+        background-position: right;
         .btn{
             text-transform: capitalize;
         }
     } 
     @media screen and (max-width:576px){
      .form{
+         min-height: 50vh;
         width: 100vw;
+     }
+     .emoji{
+         display: none;
+     }
+     h3{
+         font-size: 2.3rem;
      }
     }
 </style>

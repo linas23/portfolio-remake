@@ -4,6 +4,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Arapey|Cormorant+Garamond|Jim+Nightshade|Uncial+Antiqua|Vidaloka|ZCOOL+XiaoWei&display=swap');
 *{
   margin:0px;
@@ -20,6 +21,7 @@ font-family: 'Cormorant Garamond', serif;
 font-family: 'Vidaloka', serif;
 font-family: 'Uncial Antiqua', cursive;
 font-family: 'ZCOOL XiaoWei', serif;
+font-family: 'Lora', serif;
 font-family: 'Arapey', serif; */
 
 </style>

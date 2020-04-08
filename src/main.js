@@ -6,9 +6,12 @@ import store from './store'
 import SequentialEntrance from 'vue-sequential-entrance'
 import 'vue-sequential-entrance/vue-sequential-entrance.css'
 import 'materialize-css/dist/js/materialize.min'
-import VueTypedJs from 'vue-typed-js'
+// import VueTypedJs from 'vue-typed-js'
+// import lightbox from 'lightbox2';
+// import lightbox from 'lightbox2/dist/js/lightbox-plus-jquery.min.js';
 
-Vue.use(VueTypedJs)
+// Vue.use(lightbox)
+// Vue.use(VueTypedJs)
 // Vue.use(VueCarousel);
 Vue.use(SequentialEntrance);
 Vue.config.productionTip = false;
