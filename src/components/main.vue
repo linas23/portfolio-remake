@@ -210,10 +210,11 @@
             align-items: center;
             padding: 30px 0px;
             .links {
-                width: 70vw;
+                display:none;
+                /* width: 70vw;
                 flex-direction: row;
                 justify-content: space-between;
-                font-size: 1.25rem;
+                font-size: 1.25rem; */
             }
     }
 
@@ -253,7 +254,7 @@
     
     @media (max-width:1200px){
         footer{
-            margin-top:15vh;
+            // margin-top:15vh;
             max-height: unset;
             height: 100vh;
             width: 100%;
@@ -282,6 +283,7 @@
                 font-size: 1.25rem;
             }
         }
+        
     }
     @media (min-width:800px){
         .rumpum{

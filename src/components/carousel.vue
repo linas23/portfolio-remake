@@ -120,9 +120,9 @@ export default {
     @media screen and (max-width:576px){
         #photography{
             width: 100%;
+            margin-bottom:10vh;
             h2{
                 font-size: 2.5rem;
-                min-height: 2.5rem;
             }
             p{
                 font-size: 1.25rem;
