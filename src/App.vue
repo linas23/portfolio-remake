@@ -10,11 +10,15 @@
   margin:0px;
   padding: 0px;
   box-sizing: border-box;
+  overflow: hidden;
+
+}
+html{
+  overflow: hidden;
 }
 #app{
   background: whitesmoke;
   max-width: 100vw;
-  overflow: hidden;
 }
 /* font-family: 'Jim Nightshade', cursive;
 font-family: 'Cormorant Garamond', serif;

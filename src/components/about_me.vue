@@ -67,6 +67,7 @@
         margin: 0 auto;
         color: black;
         padding: 0px 100px ;
+        margin-top: 5vh;
     }
     .ullu{
         transform:scale(0.9)
@@ -102,12 +103,31 @@
         display:flex;
         flex-direction: column;
         img{
-            transform: scale(0.9);
+            transform: scale(0.75);
             width:100%;
         }
         .content{
             text-align: justify;
             font-size: 1.1rem;
+            word-spacing: 0em;
+            line-height: 1.5em;
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    h2{
+        font-size:3rem;
+    }
+    .thisIsMe{
+        display:flex;
+        flex-direction: column;
+        img{
+            transform: scale(0.75);
+            width:100%;
+        }
+        .content{
+            text-align: justify;
+            font-size: 1.25rem;
             word-spacing: 0em;
             line-height: 1.5em;
         }

@@ -54,6 +54,10 @@ import image10 from './images/img/IMG_20181001_122305-02.jpeg'
 import image11 from './images/img/IMG_20190413_180507-01.jpeg'
 import image12 from './images/img/PSX_20180525_114348.jpg'
 import image13 from './images/img/received_2134659036790048-01.jpeg'
+import image14 from './images/img/IMG_20180502_133237-01.jpeg'
+import image17 from './images/img/IMG_20190730_184208-01.jpeg'
+import image18 from './images/img/IMG_20190429_164846-01.jpeg'
+import image19 from './images/img/IMG_20190220_192002-01.jpeg'
 export default {
 
     data(){
@@ -71,7 +75,11 @@ export default {
                 {src:image10},
                 {src:image11},
                 {src:image12},
-                {src:image13}
+                {src:image13},
+                {src:image14},
+                {src:image17},
+                {src:image18},
+                {src:image19},
             ]
         }
     },
@@ -124,7 +132,6 @@ export default {
             }
             .carousel{
                 min-height: 60%;
-                // overflow: hidden;
             }
             img{
                 height: auto;

@@ -129,7 +129,7 @@ export default {
     } 
     @media screen and (max-width:576px){
      .form{
-         min-height: 50vh;
+        height: 50vh;
         width: 100vw;
      }
      .emoji{

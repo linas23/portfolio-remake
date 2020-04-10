@@ -34,7 +34,7 @@
 }
 #contact{
     font-family: 'ZCOOL XiaoWei', serif;
-    height: 100%;
+    height: 50vh;
 }
 .cards{
     padding: 0px 0px 40px 20px;

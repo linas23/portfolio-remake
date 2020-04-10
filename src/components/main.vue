@@ -108,7 +108,7 @@
     #main {
         width:90%;
         margin:0 auto;
-        height: 100vh;
+        min-height: 100vh;
         display: grid;
         grid-template-columns: 45% 5% 50%;
         justify-content: space-between;
@@ -129,11 +129,10 @@
     }
 
     .me {
-        height: 100%;
         display:flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        padding: 25px;
+        justify-content: space-between;
+        // padding: 25px;
         width:100%;
         .fcard {
             width:80%;
@@ -165,7 +164,7 @@
             }
         }
         .tabs_left {
-            padding: 20px 40px;
+            padding-top: 20px;
             display: flex;
             justify-content: space-evenly;
             text-align: center;
@@ -252,4 +251,99 @@
         }
     }
     
+    @media (max-width:1200px){
+        footer{
+            margin-top:15vh;
+            max-height: unset;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    @media (max-width:800px){
+        .rumpum{
+            display: none;
+        }
+        #main {
+            width:90%;
+            margin:0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0px;
+            .links {
+                margin:10px 0px;
+                width: 70vw;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 1.25rem;
+            }
+        }
+    }
+    @media (min-width:800px){
+        .rumpum{
+            display: none;
+        }
+        #main {
+            width:90%;
+            margin:0 auto;
+            height: 100vh;
+            display: grid;
+            grid-template-columns:90% 10%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            .links {
+                margin:10px 0px;
+                width: 100%;
+                flex-direction: column;
+                justify-content: space-between;
+                font-size: 1.25rem;
+            }
+        }
+    }
+    @media (min-width:850px){
+        
+        #main {
+            width:90%;
+            margin:0 auto;
+            display: grid;
+            grid-template-columns: 45% 5% 50%;
+            justify-content: space-between;
+            align-items: center;
+            .links {
+                width:auto;
+                display: flex;
+                flex-direction: column;
+                a {
+                    padding: 15px 10px;
+                    color: rgb(5, 155, 255);
+                }
+                a:hover {
+                    transition: all 0.75s ease;
+                    transform: rotate(1turn);
+                    color: rgb(51, 51, 105);
+                }
+            }
+    }
+    
+    .rumpum {
+            display: block;
+            width: 100%;
+            height:100%;
+            padding: 0px 20px 60px 0px;
+                img{
+                    transform: scale(0.8);
+                    width: 100%;
+                    box-shadow: 0px 0px 10px rgb(116, 112, 112);
+                    transition: all 1s ease;
+                    &:hover {
+                        transform: rotateY(180deg) scale(0.8);
+                    }
+                }
+            }
+    }
 </style>

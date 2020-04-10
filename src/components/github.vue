@@ -103,6 +103,7 @@ export default {
 </script>   
 <style lang="scss" scoped>
 
+
 #github{
     width:90%;
     margin:0px auto;
@@ -127,6 +128,9 @@ h2{
     box-shadow: 0px 0px 10px black;
     min-height:300px;
     padding-bottom: 20px;
+    border-bottom-width: 0px;
+    border-bottom-color: #410093;
+    border-bottom-style: solid;
     transition: all 0.5s ease-in;
     img{
         width:100%;
@@ -147,6 +151,25 @@ h2{
     }
     &:hover{
         transform: scale(1.1);
+        border-bottom-width: 2px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .card{
+        width:45%;
+    }
+    .illustration{
+        width:100%;
+        transform: scale(0.8);
+    }
+}
+@media screen and (max-width:900px){
+    .card{
+        width:100%;
+    }
+    .illustration{
+        width:100%;
     }
 }
 
@@ -185,5 +208,4 @@ h2{
         }
     }
 }
-
 </style>
