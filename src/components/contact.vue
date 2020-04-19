@@ -1,20 +1,22 @@
 <template>
     <div id="contact">
-            <div class="cards center">
-                <div class="card-title">
-                    <h3>
-                    text me before calling <span class="emoji"> 😜</span>
-                    </h3>
+                <div class="title">
+                    <h2>
+                        Reach me !
+                    </h2>
                 </div>
                 <div class="details">
                     <div class="address">
-                        Address :ittachhen-15, Bhaktapur, Nepal
+                        <i class="fas fa-map-marker-alt"></i>
+                         ittachhen-15, Bhaktapur, Nepal
                     </div>
                     <div class="phone">
-                        Phone   :9860678131
+                        <i class="fas fa-mobile "></i>
+                        9860678131
                     </div>
                     <div class="email">
-                        E-mail  :desemaru77@gmail.com
+                        <i class="fas fa-envelope"></i>
+                        desemaru77@gmail.com
                     </div>
                 </div>
                 <div class="links">  
@@ -23,7 +25,6 @@
                     <a href="https://www.instagram.com/sanil_23"><i class="fab fa-2x fa-instagram"></i></a>
                     <a href="https://github.com/linas23"><i class="fab fa-2x fa-github"></i></a>
                 </div>
-            </div>
         </div>
 </template>
 
@@ -34,30 +35,32 @@
 }
 #contact{
     font-family: 'ZCOOL XiaoWei', serif;
-    height: 50vh;
+    min-height: 20vh;
+    width: 80%;
+    margin: 0px auto;
+    padding: 20px 0;
 }
-.cards{
-    padding: 0px 0px 40px 20px;
-    height: 100%;
-    background-image: url("./images/20181028_163359-02.jpeg");
-    background-size: 110% 100%;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
+.title{
+    color: #410093;
     h2{
-        text-transform: capitalize;
-        padding: 0px;
+        margin: 0px;
     }
+}
     .details{
+        margin:5vh 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         div{
-            height: 40px;
-            margin: 0 auto;
-            font-size: 1.4rem;
+            i{
+                margin-right: 15px;
+                color: rgb(60, 23, 146);
+            }
+            font-size: 1.6rem;
         }
     }  
     .links{
+        text-align: center;
         a{
             padding: 15px;
             color: rgb(5, 155, 255);
@@ -68,43 +71,60 @@
             transform: rotate(1turn);
         }
     }
-    
+@media screen and (max-width:768px){
+    .details{
+            flex-direction: column;
+        div{
+            display: flex;
+            align-items: center;
+            margin:10px 0;
+            i{
+                    width: 10%;
+                    margin-right: 0px;
+            }
+        }
+    }
 }
 @media screen and (max-width:576px){
      #contact{
-        width: 100vw;
+        width: 90%;
      }
-     .cards{
-        padding: 0px 0px 40px 20px;
-        background-image: url("./images/20181028_163359-02.jpeg");
-        background-size: 105% 100%;
-        h3{
-            text-transform: capitalize;
-            padding: 0px;
-            .emoji{
-                display: none;
-            }
-        }
+     .title{
+         h2{
+                font-size: 2.5rem;
+         }
+     }
         .details{
+            flex-direction: column;
             div{
-                height: 40px;
-                margin: 0 auto;
-                font-size: 1.4rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                i{
+                    width: 10%;
+                    margin-right: 0px;
+                }
+                margin: 5px 0;
             }
         }  
-        .links{
-            font-size: 1.3rem;
-            a{
-                padding: 15px;
-                color: rgb(5, 155, 255);
-            }
-            i:hover{
-                transition: all 0.75s ease;
-                color: rgb(51, 51, 105);
-                transform: rotate(1turn);
+    }   
+    .links{
+        a{
+            padding: 15px 15px;
+            color: rgb(5, 155, 255);
+            i{
+                font-size: 2.5rem;
             }
         }
-        
-    }   
+        i:hover{
+            transition: all 0.75s ease;
+            color: rgb(51, 51, 105);
+            transform: rotate(1turn);
+        }
+}
+@media screen and (max-width:320px){
+    #contact{
+        margin-top: 15vh;
     }
+}
 </style>

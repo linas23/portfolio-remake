@@ -57,6 +57,7 @@ export default {
         padding: 0px 100px;
     }
     h2{
+        margin: 0px;
         color:#410093;
     }
     p{

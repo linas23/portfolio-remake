@@ -96,7 +96,6 @@ export default {
         margin: 0 auto;
         height: 100vh;
         font-family: 'ZCOOL XiaoWei', serif;
-        background: whitesmoke;
         h2,p{
             padding: 0px 100px;
             color:#410093;
@@ -120,7 +119,6 @@ export default {
     @media screen and (max-width:576px){
         #photography{
             width: 100%;
-            margin-bottom:10vh;
             h2{
                 font-size: 2.5rem;
             }
@@ -131,7 +129,7 @@ export default {
                 padding: 0px 25px;
             }
             .carousel{
-                min-height: 60%;
+                height: 60%;
             }
             img{
                 height: auto;

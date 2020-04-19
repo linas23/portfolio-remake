@@ -13,10 +13,9 @@
                     A self taught developer from Bhaktapur, Nepal.
                     <br>
                     I am interested in web development and have been more focused on it lately.
-                    Learning from online sources, practicing and consistentcy is now a part of me.
+                    Learning from online sources, practicing and consistency is now a part of me.
                     I believe that all the hardwork will be worth it one day. Moreover, i enjoy this process of learning 
                     and implementing. 
-
                     <br><br>
                     As a Computer Science student, college has been a great help with it's courses
                     and is backing me up from the core knowledge of the different aspects of the fields in Computer Science.
@@ -25,8 +24,7 @@
                     <br><br>
                     Some of the projects i have worked on are 
                     in <a href="#github">my github</a> section of this portfolio.
-                    
-                    <br>
+                    <br><br>
                     Apart from these, i am passionate about photography. Have a look at a 
                     <a href="#photography">Photography</a> section below. 
                     <br>
@@ -67,12 +65,13 @@
         margin: 0 auto;
         color: black;
         padding: 0px 100px ;
-        margin-top: 5vh;
     }
     .ullu{
         transform:scale(0.9)
     }
     h2{
+        margin: 0px;
+        padding: 0px;
         font-family: 'ZCOOL XiaoWei', serif;
         color:#410093;
         font-size:2.5rem;
@@ -91,29 +90,7 @@
         }
     }
     
-@media screen and (max-width:576px){
-    #about_me {
-        padding: 0px ;
-    }
-    h2{
-        font-size:2.5rem;
-        color:#410093;
-    }
-    .thisIsMe{
-        display:flex;
-        flex-direction: column;
-        img{
-            transform: scale(0.75);
-            width:100%;
-        }
-        .content{
-            text-align: justify;
-            font-size: 1.1rem;
-            word-spacing: 0em;
-            line-height: 1.5em;
-        }
-    }
-}
+
 @media screen and (max-width:1200px){
     h2{
         font-size:3rem;
@@ -128,6 +105,30 @@
         .content{
             text-align: justify;
             font-size: 1.25rem;
+            word-spacing: 0em;
+            line-height: 1.5em;
+        }
+    }
+}
+@media screen and (max-width:576px){
+    #about_me {
+        padding: 0px ;
+    }
+    h2{
+        
+        font-size:2.5rem;
+        color:#410093;
+    }
+    .thisIsMe{
+        display:flex;
+        flex-direction: column;
+        img{
+            transform: scale(0.75);
+            width:100%;
+        }
+        .content{
+            text-align: justify;
+            font-size: 1.1rem;
             word-spacing: 0em;
             line-height: 1.5em;
         }

@@ -38,10 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 import thcards from './images/projects/13cards.png';
 import findAnother from './images/projects/findanother.png';
-import rk from './images/projects/Rk.com.png';
+// import rk from './images/projects/Rk.com.png';
 import laughoutloud from './images/projects/laughoutloud.png'
 import bunchofapis from './images/projects/bunchofapis.png'
-import oldportfolio from './images/projects/oldportfolio.png'
+// import oldportfolio from './images/projects/oldportfolio.png'
+import kwa from './images/projects/kanyeWestApi.png'
 import bmc from './images/projects/Annotation 2020-04-05 232219.png'
 import frontend from './images/projects/Annotation 2020-04-05 232441.png'
 export default {
@@ -51,21 +52,21 @@ export default {
             {
                 img:thcards,
                 title:'13 Cards',
-                description:'A page displaying various css transitions.',
-                github:'https://github.com/linas23/13-cards'
+                description:'A page displaying various css transformations.',
+                github:'https://linas23.github.io/13-cards/'
             },
             {
                 img:findAnother,
                 title:'Finding Another',
                 description:'Get a match and try to win the game.',
-                github:'https://github.com/linas23/findAnother',
+                github:'https://linas23.github.io/findAnother/',
             },
-            {
+            /* {
                 img:rk,
                 title:'Rajamati Kumati',
                 description:'A dream project.',
                 github:'Sorry not available in Github yet.'
-            },
+            }, */
             {
                 img:laughoutloud,
                 title:'A joke for you',
@@ -79,6 +80,12 @@ export default {
                 github: 'https://wordapp23.herokuapp.com/'
             },
             {
+                img:kwa,
+                title:'Kanye West quotes',
+                description:'A quote from Kanye West API.',
+                github:'https://kanyewest23.herokuapp.com/'
+            },
+            {
                 img:bmc,
                 title:'BMC accounting',
                 description:'A simple record management system which was a proposed project work in college for System Analysis and Design.',
@@ -89,13 +96,13 @@ export default {
                 title:'100 projects of frontend',
                 description:'An extended version of #100DaysOfCode challenge. Practicing the frontend code daily.',
                 github:'https://frontend23.now.sh/' 
-            },
-            {
+            }
+            /* {
                 img:oldportfolio,
                 title:'My old portfolio',
                 description:'here is my old portfolio.',
                 github: 'https://linas23.github.io/myportfolio23/' 
-            },
+            }, */
         ]
         }
     }
@@ -111,6 +118,7 @@ export default {
     padding: 0 100px;
 }
 h2{
+    margin: 0px;
     color:#410093;
 }
 .projects{
@@ -123,9 +131,10 @@ h2{
     width:30%
 }
 .card{
+    // height:100%;
     width: 30%;
     margin: 30px 0px;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px rgb(128, 126, 126);
     min-height:300px;
     padding-bottom: 20px;
     border-bottom-width: 0px;
@@ -154,24 +163,51 @@ h2{
         border-bottom-width: 2px;
     }
 }
-
-@media screen and (max-width:1200px){
-    .card{
+@media (max-width:1024px){
+        .card{
         width:45%;
+        img{
+            padding: 0px;
+        }
+        .card-title{
+            font-size: 2.3rem;
+        }
+        .card-content{
+            p{
+                font-size:1.5rem;
+            }
+            .link{
+                font-size: 1.5rem;
+            }
+        }
     }
     .illustration{
-        width:100%;
-        transform: scale(0.8);
+        width:50%;
     }
-}
-@media screen and (max-width:900px){
+    }
+@media screen and (max-width:768px){
     .card{
         width:100%;
+        img{
+            padding: 0px;
+        }
+        .card-title{
+            font-size: 2.3rem;
+        }
+        .card-content{
+            p{
+                font-size:1.5rem;
+            }
+            .link{
+                font-size: 1.5rem;
+            }
+        }
     }
     .illustration{
         width:100%;
     }
 }
+
 
 @media screen and (max-width:576px){
     #github{
@@ -191,21 +227,22 @@ h2{
         width:90%
     }
     .card{
-        width: 90%;
+        width: 100%;
         padding-bottom: 20px;
         img{
             width:100%;
             padding: 5px;
         }
         .card-title{
-            font-size: 2rem;
+            font-size: 1.75rem !important;
         }
-        .card-title,.card-content{
-            font-size: 1.5rem;
+        .card-content{
+            font-size: 1.25rem !important;
         }
         .link{
-            font-size: 1.3rem;
+            font-size: 1.1rem !important;
         }
     }
 }
+
 </style>

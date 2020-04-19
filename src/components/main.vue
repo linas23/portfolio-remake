@@ -2,21 +2,20 @@
     <div>
         <div id="main">
             <div class="me">
-            <sequential-entrance  fromLeft> 
-                <div class="fcard">
-                    <img src="./images/profileimg.jpeg" alt="">
-                    <div class="card-title">
-                        LINAS 23
+                <sequential-entrance  fromLeft> 
+                    <div class="fcard">
+                        <img src="./images/profileimg.jpeg" alt="">
+                        <div class="card-title">
+                            Sanil Desemaru
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                A student of Computer Science Information Technology (6th semester) from Bhaktapur Multiple
+                                Campus. <b>🦉</b>
+                            </p>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <p>
-                            A student of Computer Science Information Technology (5th semester) from Bhaktapur Multiple
-                            Campus. Welcome to my portfolio.
-                        </p>
-                        <b>🦉</b>
-                    </div>
-                </div>
-             </sequential-entrance>
+                </sequential-entrance>
                 <sequential-entrance  fromRight> 
                     <div class="tabs_left">
                             <div v-for="(tab,index) in tabs" :key="index">
@@ -42,9 +41,9 @@
                 </div>
              </sequential-entrance>
              <sequential-entrance fromRight>
-            <div class="rumpum">
-                <img src="./images/rumpum1.jpg" alt="">
-            </div>
+                <div class="rumpum">
+                    <img src="./images/rumpum1.jpg" alt="">
+                </div>
              </sequential-entrance>
         </div>
         <compAboutMe></compAboutMe>
@@ -52,7 +51,7 @@
         <compGithub></compGithub>
         <compCarousel></compCarousel>
         <footer>
-            <compForm></compForm>
+            <!-- <compForm></compForm> -->
             <compContact></compContact>
         </footer>
     </div>
@@ -61,7 +60,7 @@
 
 <script>
     import compCarousel from '@/components/carousel.vue'
-    import compForm from '@/components/form.vue';
+    // import compForm from '@/components/form.vue';
     import compGithub from '@/components/github';
     import compContact from '@/components/contact';
     import compAboutMe from '@/components/about_me';
@@ -69,7 +68,7 @@
     export default {
         components: {
             compCarousel,
-            compForm,
+            // compForm,
             compGithub,
             compContact,
             compAboutMe,
@@ -106,12 +105,11 @@
 </script>
 <style lang="scss" scoped>
     #main {
-        width:90%;
+        width:80%;
+        height: 100vh;
         margin:0 auto;
-        min-height: 100vh;
         display: grid;
         grid-template-columns: 45% 5% 50%;
-        justify-content: space-between;
         align-items: center;
         .links {
             display: flex;
@@ -131,22 +129,21 @@
     .me {
         display:flex;
         flex-direction: column;
-        justify-content: space-between;
-        // padding: 25px;
-        width:100%;
+        justify-content: space-evenly;
+        height: 100%;
         .fcard {
             width:80%;
             margin:0 auto;
-            box-shadow: 0px 0px 10px black;
-            overflow: hidden;
-            padding:20px;
+            box-shadow: 5px 5px 10px rgb(73, 73, 73);
             .card-title {
+                padding:0 20px;
                 font-size:2rem;
                 font-weight:700;
                 margin:5px 0px;
                 font-family: 'Cormorant Garamond', serif;
             }
             .card-content {
+                padding:0px 20px 15px 20px;
                 p {
                     text-align: justify;
                     font-size: 1.1rem;
@@ -156,11 +153,6 @@
             img {
                 width: 100%;
                 transition:all 1s ease;
-            }
-            &:hover{
-                img{
-                    transform: scale(1.1) ;
-                }
             }
         }
         .tabs_left {
@@ -176,93 +168,28 @@
             }
         }
     }
- .rumpum {
-     width: 100%;
-     height:100%;
-     padding: 0px 20px;
-        img{
-            transform: scale(0.9);
-            width: 100%;
-            box-shadow: 0px 0px 10px rgb(116, 112, 112);
-            transition: all 1s ease;
-            &:hover {
-                transform: rotateY(180deg) scale(0.9);
-            }
-        }
-    }
-
-    footer{
-        max-height: 70vh;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    @media screen and (max-width:576px) {
-        
-         #main {
-            width:90%;
-            margin:0 auto;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 0px;
-            .links {
-                display:none;
-                /* width: 70vw;
-                flex-direction: row;
-                justify-content: space-between;
-                font-size: 1.25rem; */
-            }
-    }
-
-    .me {
-        padding: 0px;
-        width: 100%;
-        .fcard {
-            width:100%;
-            margin:0 auto;
-            .card-content {
-                p {
-                    font-size: 1.2rem;
-                }
-            }
-        }
-        .tabs_left {
-            padding: 10px 0px;
-            width: 100%;
-            justify-content: space-between;
-            span {
-                font-size: 1.2rem;
-            }
-        }
-    }
     .rumpum {
-        display: none;
+        width: 100%;
+            height:100%;
+            img{
+                transform: scale(0.85);
+                width: 100%;
+                box-shadow: 5px 5px 0px rgba(219, 218, 218,0),5px 5px 5px rgb(54, 52, 52);
+                transition: all 1s ease;
+                &:hover {
+                    transform: rotateY(180deg) scale(0.85) ;
+                }
+            } 
         }
 
     footer{
-        max-height: unset;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        }
+        background: rgba(211, 210, 210, 0.527);
+        background-image: url('./images/pngguru.com (4).png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
     }
-    
-    @media (max-width:1200px){
-        footer{
-            // margin-top:15vh;
-            max-height: unset;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-    }
-    @media (max-width:800px){
+    @media (max-width:768px){
         .rumpum{
             display: none;
         }
@@ -276,76 +203,66 @@
             align-items: center;
             padding: 25px 0px;
             .links {
-                margin:10px 0px;
-                width: 70vw;
-                flex-direction: row;
-                justify-content: space-between;
-                font-size: 1.25rem;
+                display: none;
             }
         }
-        
-    }
-    @media (min-width:800px){
-        .rumpum{
-            display: none;
-        }
-        #main {
-            width:90%;
-            margin:0 auto;
-            height: 100vh;
-            display: grid;
-            grid-template-columns:90% 10%;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px;
-            .links {
-                margin:10px 0px;
-                width: 100%;
-                flex-direction: column;
-                justify-content: space-between;
-                font-size: 1.25rem;
-            }
-        }
-    }
-    @media (min-width:850px){
-        
-        #main {
-            width:90%;
-            margin:0 auto;
-            display: grid;
-            grid-template-columns: 45% 5% 50%;
-            justify-content: space-between;
-            align-items: center;
-            .links {
-                width:auto;
-                display: flex;
-                flex-direction: column;
-                a {
-                    padding: 15px 10px;
-                    color: rgb(5, 155, 255);
-                }
-                a:hover {
-                    transition: all 0.75s ease;
-                    transform: rotate(1turn);
-                    color: rgb(51, 51, 105);
-                }
-            }
     }
     
-    .rumpum {
+     @media screen and (max-width:576px) {
+        #main {
+            width:90%;
+            margin:0 auto;
             display: block;
-            width: 100%;
-            height:100%;
-            padding: 0px 20px 60px 0px;
-                img{
-                    transform: scale(0.8);
-                    width: 100%;
-                    box-shadow: 0px 0px 10px rgb(116, 112, 112);
-                    transition: all 1s ease;
-                    &:hover {
-                        transform: rotateY(180deg) scale(0.8);
-                    }
+            .links {
+                display: none;
+            }
+        }
+
+    .me {
+        padding: 25px 0;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .fcard {
+            width:100%;
+            box-shadow: 5px 5px 10px rgb(73, 73, 73);
+            .card-title {
+                padding:0 20px;
+                font-size:2rem;
+                font-weight:700;
+                margin:5px 0px;
+                font-family: 'Cormorant Garamond', serif;
+            }
+            .card-content {
+                padding:0px 20px 15px 20px;
+                p {
+                    text-align: justify;
+                    font-size: 1.1rem;
+                    font-family: 'Vidaloka', serif;
                 }
             }
+            img {
+                width: 100%;
+                transition:all 1s ease;
+            }
+        }
+        .tabs_left {
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            span {
+                color: black;
+                font-size: 1.2rem;
+                padding: 10px;
+                font-family: 'Vidaloka', serif;
+            }
+        }
     }
+        
+    .rumpum {
+        display: none;
+        }
+    }
+
 </style>

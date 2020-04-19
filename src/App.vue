@@ -16,10 +16,7 @@
 html{
   overflow: hidden;
 }
-#app{
-  background: whitesmoke;
-  max-width: 100vw;
-}
+
 /* font-family: 'Jim Nightshade', cursive;
 font-family: 'Cormorant Garamond', serif;
 font-family: 'Vidaloka', serif;
