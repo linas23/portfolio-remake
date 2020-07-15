@@ -1,248 +1,250 @@
 <template>
-        <!-- Mxy git -->
-    <div id="github">
-        <!-- <vue-typed-js :strings="['Projects in GitHub']" :loop="true" :fadeOut="true" :typeSpeed="100">
+  <!-- Mxy git -->
+  <div id="github">
+    <!-- <vue-typed-js :strings="['Projects in GitHub']" :loop="true" :fadeOut="true" :typeSpeed="100">
             <h2 class="typing"></h2>
-        </vue-typed-js> -->
-            <h2>Projects in Github</h2>
-            <!-- <vue-typer text='' :erase-on-complete='false' :repeat="infinity"></vue-typer> -->
-            <br>
-            <div class="projects">
-                <div class="card tooltipped" v-for="(project,index) in projects" :key="index" data-position="bottom" data-tooltip="Do visit once">
-                        <img class="card-img" v-bind:src="project.img"  alt="">
-                        <div class="card-title">{{project.title}}</div>
-                        <div class="card-content">
-                            <a v-bind:href="project.github" class="link">{{project.github}}</a> 
-                            <p>
-                                {{project.description}}
-                            </p>
-                        </div>  
-                </div>  
-                    <img src="../assets/images/undraw_developer_activity_bv83.svg" class="illustration" alt=""> 
-            </div>
+    </vue-typed-js>-->
+    <h2>Projects in Github</h2>
+    <!-- <vue-typer text='' :erase-on-complete='false' :repeat="infinity"></vue-typer> -->
+    <br />
+    <div class="projects">
+      <div
+        class="card tooltipped"
+        v-for="(project,index) in projects"
+        :key="index"
+        data-position="bottom"
+        data-tooltip="Do visit once"
+      >
+        <img class="card-img" v-bind:src="project.img" alt />
+        <div class="card-title">{{project.title}}</div>
+        <div class="card-content">
+          <a v-bind:href="project.github" class="link">{{project.github}}</a>
+          <p>{{project.description}}</p>
+        </div>
+      </div>
+      <img src="../assets/images/undraw_developer_activity_bv83.svg" class="illustration" alt />
     </div>
+  </div>
 </template>
 
 <script>
+import M from "materialize-css/dist/js/materialize.min";
 
-import M from 'materialize-css/dist/js/materialize.min'
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.tooltipped');
-    var instances = M.Tooltip.init(elems,{
-        margin:-1
-    });
-    instances();
+document.addEventListener("DOMContentLoaded", function() {
+  var elems = document.querySelectorAll(".tooltipped");
+  var instances = M.Tooltip.init(elems, {
+    margin: -1
   });
+  instances();
+});
 
-
-import thcards from './images/projects/13cards.png';
-import findAnother from './images/projects/findanother.png';
+import thcards from "./images/projects/13cards.png";
+import findAnother from "./images/projects/findanother.png";
 // import rk from './images/projects/Rk.com.png';
-import laughoutloud from './images/projects/laughoutloud.png'
-import bunchofapis from './images/projects/bunchofapis.png'
+import laughoutloud from "./images/projects/laughoutloud.png";
+import bunchofapis from "./images/projects/bunchofapis.png";
 // import oldportfolio from './images/projects/oldportfolio.png'
-import kwa from './images/projects/kanyeWestApi.png'
-import bmc from './images/projects/Annotation 2020-04-05 232219.png'
-import frontend from './images/projects/Annotation 2020-04-05 232441.png'
+import kwa from "./images/projects/kanyeWestApi.png";
+import bmc from "./images/projects/Annotation 2020-04-05 232219.png";
+import frontend from "./images/projects/Annotation 2020-04-05 232441.png";
 export default {
-    data(){
-        return{
-             projects:[
-            {
-                img:thcards,
-                title:'13 Cards',
-                description:'A page displaying various css transformations.',
-                github:'https://linas23.github.io/13-cards/'
-            },
-            {
-                img:findAnother,
-                title:'Finding Another',
-                description:'Get a match and try to win the game.',
-                github:'https://linas23.github.io/findAnother/',
-            },
-            /* {
+  data() {
+    return {
+      projects: [
+        {
+          img: thcards,
+          title: "13 Cards",
+          description: "A page displaying various css transformations.",
+          github: "https://linas23.github.io/13-cards/"
+        },
+        {
+          img: findAnother,
+          title: "Finding Another",
+          description: "Get a match and try to win the game.",
+          github: "https://linas23.github.io/findAnother/"
+        },
+        /* {
                 img:rk,
                 title:'Rajamati Kumati',
                 description:'A dream project.',
                 github:'Sorry not available in Github yet.'
             }, */
-            {
-                img:laughoutloud,
-                title:'A joke for you',
-                description:'please smile for a while.',
-                github:'https://laughoutloud23.herokuapp.com/'
-            },
-            {
-                img:bunchofapis,
-                title:'API use',
-                description:'get news, word definitions and play videos from youtube. Some of the functionality may not work due to the need of updating API keys.',
-                github: 'https://wordapp23.herokuapp.com/'
-            },
-            {
-                img:kwa,
-                title:'Kanye West quotes',
-                description:'A quote from Kanye West API.',
-                github:'https://kanyewest23.herokuapp.com/'
-            },
-            {
-                img:bmc,
-                title:'BMC accounting',
-                description:'A simple record management system which was a proposed project work in college for System Analysis and Design.',
-                github: 'https://github.com/linas23/bmcaccounting' 
-            },
-            {
-                img:frontend,
-                title:'100 projects of frontend',
-                description:'An extended version of #100DaysOfCode challenge. Practicing the frontend code daily.',
-                github:'https://frontend23.now.sh/' 
-            }
-            /* {
+        {
+          img: laughoutloud,
+          title: "A joke for you",
+          description: "please smile for a while.",
+          github: "https://laughoutloud23.herokuapp.com/"
+        },
+        {
+          img: bunchofapis,
+          title: "API use",
+          description:
+            "get news, word definitions and play videos from youtube. Some of the functionality may not work due to the need of updating API keys.",
+          github: "https://wordapp23.herokuapp.com/"
+        },
+        {
+          img: kwa,
+          title: "Kanye West quotes",
+          description: "A quote from Kanye West API.",
+          github: "https://kanyewest23.herokuapp.com/"
+        },
+        {
+          img: bmc,
+          title: "BMC accounting",
+          description:
+            "A simple record management system which was a proposed project work in college for System Analysis and Design.",
+          github: "https://github.com/linas23/bmcaccounting"
+        },
+        {
+          img: frontend,
+          title: "100 projects of frontend",
+          description:
+            "An extended version of #100DaysOfCode challenge. Practicing the frontend code daily.",
+          github: "https://frontend23.now.sh/"
+        }
+        /* {
                 img:oldportfolio,
                 title:'My old portfolio',
                 description:'here is my old portfolio.',
                 github: 'https://linas23.github.io/myportfolio23/' 
             }, */
-        ]
-        }
-    }
-}
+      ]
+    };
+  }
+};
 </script>   
 <style lang="scss" scoped>
-
-
-#github{
-    width:90%;
-    margin:0px auto;
-    font-family: 'ZCOOL XiaoWei', serif;
-    padding: 0 100px;
+#github {
+  width: 90%;
+  margin: 0px auto;
+  font-family: "ZCOOL XiaoWei", serif;
+  padding: 0 100px;
 }
-h2{
-    margin: 0px;
-    color:#410093;
+h2 {
+  margin: 0px;
+  color: #410093;
 }
-.projects{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap:wrap;
+.projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-.illustration{
-    width:30%
+.illustration {
+  width: 30%;
 }
-.card{
-    // height:100%;
-    width: 30%;
-    margin: 30px 0px;
-    box-shadow: 0px 0px 10px rgb(128, 126, 126);
-    min-height:300px;
-    padding-bottom: 20px;
-    border-bottom-width: 0px;
-    border-bottom-color: #410093;
-    border-bottom-style: solid;
-    transition: all 0.5s ease-in;
-    img{
-        width:100%;
+.card {
+  // height:100%;
+  width: 30%;
+  margin: 30px 0px;
+  box-shadow: 0px 0px 10px rgb(128, 126, 126);
+  min-height: 300px;
+  padding-bottom: 20px;
+  border-bottom-width: 0px;
+  border-bottom-color: #410093;
+  border-bottom-style: solid;
+  transition: all 0.5s ease-in;
+  img {
+    width: 100%;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  .card-title {
+    font-size: 1.5rem;
+    padding: 0px;
+  }
+  .card-title,
+  .card-content {
+    padding: 0px 20px;
+  }
+  .link {
+    font-size: 1.2rem;
+    word-break: break-all;
+  }
+  &:hover {
+    transform: scale(1.1);
+    border-bottom-width: 2px;
+  }
+}
+@media (max-width: 1024px) {
+  .card {
+    width: 45%;
+    img {
+      padding: 0px;
     }
-    p{
-        font-size: 1.1rem;
+    .card-title {
+      font-size: 2.3rem;
     }
-    .card-title{
+    .card-content {
+      p {
         font-size: 1.5rem;
-        padding: 0px;
+      }
+      .link {
+        font-size: 1.5rem;
+      }
     }
-    .card-title,.card-content{
-        padding: 0px 20px;
-    }
-    .link{
-        font-size: 1.2rem;
-        word-break: break-all;
-    }
-    &:hover{
-        transform: scale(1.1);
-        border-bottom-width: 2px;
-    }
+  }
+  .illustration {
+    width: 50%;
+  }
 }
-@media (max-width:1024px){
-        .card{
-        width:45%;
-        img{
-            padding: 0px;
-        }
-        .card-title{
-            font-size: 2.3rem;
-        }
-        .card-content{
-            p{
-                font-size:1.5rem;
-            }
-            .link{
-                font-size: 1.5rem;
-            }
-        }
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    img {
+      padding: 0px;
     }
-    .illustration{
-        width:50%;
+    .card-title {
+      font-size: 2.3rem;
     }
+    .card-content {
+      p {
+        font-size: 1.5rem;
+      }
+      .link {
+        font-size: 1.5rem;
+      }
     }
-@media screen and (max-width:768px){
-    .card{
-        width:100%;
-        img{
-            padding: 0px;
-        }
-        .card-title{
-            font-size: 2.3rem;
-        }
-        .card-content{
-            p{
-                font-size:1.5rem;
-            }
-            .link{
-                font-size: 1.5rem;
-            }
-        }
-    }
-    .illustration{
-        width:100%;
-    }
+  }
+  .illustration {
+    width: 100%;
+  }
 }
 
-
-@media screen and (max-width:576px){
-    #github{
-        padding: 0px;
+@media screen and (max-width: 576px) {
+  #github {
+    padding: 0px;
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  .illustration {
+    width: 90%;
+  }
+  .card {
+    width: 100%;
+    padding-bottom: 20px;
+    img {
+      width: 100%;
+      padding: 5px;
     }
-    .projects{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        flex-wrap:wrap;
+    .card-title {
+      font-size: 1.75rem !important;
     }
-    h2{
-        font-size: 2.5rem;
+    .card-content {
+      font-size: 1.25rem !important;
     }
-    .illustration{
-        width:90%
+    .link {
+      font-size: 1.1rem !important;
     }
-    .card{
-        width: 100%;
-        padding-bottom: 20px;
-        img{
-            width:100%;
-            padding: 5px;
-        }
-        .card-title{
-            font-size: 1.75rem !important;
-        }
-        .card-content{
-            font-size: 1.25rem !important;
-        }
-        .link{
-            font-size: 1.1rem !important;
-        }
-    }
+  }
 }
-
 </style>
