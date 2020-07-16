@@ -16,8 +16,8 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    titleTemplate: "%s - " + process.env.npm_package_name,
-    title: process.env.npm_package_name || "",
+    titleTemplate: "",
+    title: "Sanil Desemaru",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -27,7 +27,14 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Playfair+Display|Dancing+Script|Cedarville+Cursive|Sacramento|Montez|Staatliches|Forum&display=swap"
+      }
+    ]
   },
   /*
    ** Global CSS
@@ -37,7 +44,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ["@/plugins/aos.js"],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -57,13 +64,14 @@ export default {
    */
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
+    treeShake: true,
     theme: {
       themes: {
         light: {
           primary: "#263238",
           accent: "#F95738",
           secondary: "#063537",
-          info: colors.teal.lighten1,
+          info: "#22AAA1",
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3

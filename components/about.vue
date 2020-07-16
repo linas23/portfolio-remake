@@ -1,12 +1,23 @@
 <template>
-  <div class="mb-5">
+  <div>
     <div class="text-sm-h3 text-h4">
       I work with
-      <typical :steps="types" :wrapper="'span'" :loop="Infinity"></typical>
+      <typical
+        class="info--text"
+        :steps="types"
+        :wrapper="'span'"
+        :loop="Infinity"
+      ></typical>
     </div>
-    <v-row justify="space-around" class="my-8">
-      <v-col cols="2" v-for="(tool,index) in tools" :key="index">
-        <v-img :src="tool" alt height="15vh" contain />
+    <v-row justify="space-around" class="my-sm-12 ">
+      <v-col
+        cols="2"
+        v-for="(tool, index) in tools"
+        data-aos="slide-up"
+        :data-aos-delay="(index + 1) * 100"
+        :key="index"
+      >
+        <v-img :src="tool" alt height="15vh" class="img" contain />
       </v-col>
     </v-row>
   </div>
@@ -45,4 +56,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.img {
+  filter: grayscale(1);
+  transition: all 0.5s ease;
+  &:hover {
+    filter: grayscale(0);
+  }
+}
+.v-application {
+  .text-h4 {
+    font-family: "Playfair Display", serif !important;
+  }
+}
 </style>

@@ -1,12 +1,18 @@
 <template>
   <div>
-    <div class="display-2">Gallery</div>
-    <div :class="[mobile ? 'mobilegrid':'grids','my-5']">
-      <div v-for="(p,index) in images" :key="index" :class="'grid grid-'+ p.grid ">
+    <v-icon x-large color="primary">mdi-camera</v-icon>
+    <div :class="[mobile ? 'mobilegrid' : 'grids', 'my-5']">
+      <div
+        v-for="(p, index) in images"
+        :key="index"
+        :class="'grid grid-' + p.grid"
+        data-aos="zoom-in-up"
+        :data-aos-delay="(index + 1) * 25"
+      >
         <img :src="p.src" alt class="image" @click="viewPhoto(index)" />
       </div>
     </div>
-    <v-dialog v-model="dialog">
+    <v-dialog v-model="dialog" :max-width="mobile ? '100%' : '50%'">
       <img :src="fullImage" style="object-fit:contain; max-height:75vh" />
     </v-dialog>
   </div>
@@ -54,16 +60,14 @@ export default {
   },
   methods: {
     viewPhoto(i) {
-      console.log("viewing photo");
       this.dialog = true;
       this.imageIndex = i;
     }
   }
 };
-console.log("hello");
 </script>
 
-<style  lang="scss" scoped>
+<style lang="scss" scoped>
 .grid img {
   object-fit: cover;
   height: 100%;
@@ -75,7 +79,6 @@ console.log("hello");
   grid-template-rows: repeat(5, 150px);
   width: 100%;
   grid-gap: 10px;
-  justify-content: space-around;
   .grid-1-3r {
     grid-row: 1/3;
   }
@@ -94,7 +97,6 @@ console.log("hello");
 .mobilegrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
   grid-gap: 10px;
   .grid img {
     height: 250px;
