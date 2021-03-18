@@ -9,7 +9,7 @@
         :loop="Infinity"
       ></typical>
     </div>
-    <v-row justify="space-around" class="my-sm-12 ">
+    <v-row justify="space-around" class="my-sm-12">
       <v-col
         cols="2"
         v-for="(tool, index) in tools"
@@ -30,11 +30,12 @@ import css from "~/static/img/tools/css.jpg";
 import html from "~/static/img/tools/html.png";
 import js from "~/static/img/tools/js.jpg";
 import nodejs from "~/static/img/tools/nodejs-logo.png";
+import pptr from "~/static/img/tools/pptr.png";
 
 export default {
   data() {
     return {
-      tools: [html, css, js, vuejs, nodejs],
+      tools: [html, css, js, vuejs, nodejs, pptr],
       types: [
         "HTML",
         2000,
@@ -45,13 +46,15 @@ export default {
         "Vue js",
         2000,
         "Node js",
-        2000
-      ]
+        2000,
+        "Puppeteer",
+        2000,
+      ],
     };
   },
   components: {
-    typical
-  }
+    typical,
+  },
 };
 </script>
 

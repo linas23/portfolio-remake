@@ -42,10 +42,10 @@ export default {
         "Photographer",
         1000,
         "Night owl",
-        1000
-      ]
+        1000,
+      ],
     };
-  }
+  },
 };
 </script>
 <style lang="scss">
@@ -67,7 +67,7 @@ img {
     font-family: "Playfair Display", serif !important;
   }
   .text-h4 {
-    font-family: "Sacramento", cursive !important;
+    font-family: "Montez", serif !important;
   }
 }
 </style>
